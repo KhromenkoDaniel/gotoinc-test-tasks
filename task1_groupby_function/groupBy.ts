@@ -1,10 +1,5 @@
 import { data } from './dummy_data.js';
-type GroupByProperty<T> = keyof T | ((item: T) => string | number | undefined);
-type GroupByCriteria<T> = GroupByProperty<T> | GroupByProperty<T>[];
-
-type GroupedResult<T> = {
-    [key: string]: T[] | GroupedResult<T>;
-};
+import { GroupByCriteria, GroupedResult } from './groupBy.types';
 
 export function groupBy<T>(
     array: T[],
@@ -19,9 +14,9 @@ export function groupBy<T>(
             const [currentCriteria, ...restCriteria] = criteria;
             const grouped = groupItems(arr, currentCriteria);
             if (restCriteria.length > 0) {
-                for (const key in grouped) {
+                Object.keys(grouped).forEach((key) => {
                     grouped[key] = groupItems(grouped[key] as T[], restCriteria);
-                }
+                });
             }
             return grouped;
         } else {
@@ -40,7 +35,7 @@ export function groupBy<T>(
     return groupItems(filteredArray, criteria);
 }
 
-
+/* Logs for testing */
 
 const groupedByCountry = groupBy(data, "country");
 console.log('groupedByCountry', groupedByCountry);
