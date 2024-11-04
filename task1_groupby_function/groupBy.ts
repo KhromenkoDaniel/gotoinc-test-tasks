@@ -1,4 +1,3 @@
-import { data } from './dummy_data.js';
 import { GroupByCriteria, GroupedResult } from './groupBy.types';
 
 export function groupBy<T>(
@@ -34,14 +33,3 @@ export function groupBy<T>(
 
     return groupItems(filteredArray, criteria);
 }
-
-/* Logs for testing */
-
-const groupedByCountry = groupBy(data, "country");
-console.log('groupedByCountry', groupedByCountry);
-
-const groupedByCountryAndCity = groupBy(data, ["country", "city"]);
-console.log('groupedByCountryAndCity', JSON.stringify(groupedByCountryAndCity, null, 2));
-
-const groupedByAgeRange = groupBy(data, (person) => person.age >= 30 ? "30 and above" : "Below 30");
-console.log('groupedByAgeRange', groupedByAgeRange);
