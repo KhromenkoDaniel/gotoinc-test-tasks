@@ -9,12 +9,14 @@ import SizeGuideModal from "@/components/Product/Details/SizeGuideModal";
 import UnitSelector from "@/components/Product/Details/Sizes/UnitSelector";
 import SizeList from "@/components/Product/Details/Sizes/SizeList";
 
+import { Unit } from "@/types/product.ts";
+
 const ProductSizes = () => {
     const { selectedProduct } = useProduct();
     const { isOpen: isSizeGuideOpen, openModal: openSizeGuide, closeModal: closeSizeGuide } = useModal();
     const { convertSize } = useSizeConversion();
 
-    const [selectedUnit, setSelectedUnit] = useState<'UK' | 'US' | 'EU' | 'Foot Length (cm)'>('UK');
+    const [selectedUnit, setSelectedUnit] = useState<Unit>('UK');
     const [displayAvailableSizes, setDisplayAvailableSizes] = useState<string[]>(selectedProduct.availableSizes);
     const [displayUnavailableSizes, setDisplayUnavailableSizes] = useState<string[]>(selectedProduct.unavailableSizes);
     const [selectedSize, setSelectedSize] = useState<string>(selectedProduct.availableSizes[0]);
@@ -25,7 +27,7 @@ const ProductSizes = () => {
         setSelectedSize(selectedProduct.availableSizes[0] || '');
     }, [selectedProduct]);
 
-    const handleUnitClick = (unit: 'UK' | 'US' | 'EU' | 'Foot Length (cm)') => {
+    const handleUnitClick = (unit: Unit) => {
         setSelectedUnit(unit);
 
         const convertedAvailableSizes = selectedProduct.availableSizes.map((size) => convertSize(size, selectedUnit, unit));

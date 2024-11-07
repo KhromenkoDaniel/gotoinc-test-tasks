@@ -1,10 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-type ModalHook = {
-    isOpen: boolean;
-    openModal: () => void;
-    closeModal: () => void;
-};
+import { ModalHook } from "@/types/modal.ts";
 
 const useModal = (): ModalHook => {
     const [isOpen, setIsOpen] = useState(false);

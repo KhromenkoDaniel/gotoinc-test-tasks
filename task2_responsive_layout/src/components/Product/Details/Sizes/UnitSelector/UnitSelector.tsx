@@ -1,7 +1,5 @@
-type UnitSelectorProps = {
-    selectedUnit: 'UK' | 'US' | 'EU' | 'Foot Length (cm)';
-    onUnitClick: (unit: 'UK' | 'US' | 'EU' | 'Foot Length (cm)') => void;
-};
+import { Unit, UnitSelectorProps } from "@/types/product.ts";
+
 
 const UnitSelector = ({ selectedUnit, onUnitClick }: UnitSelectorProps) => {
     return (
@@ -10,7 +8,7 @@ const UnitSelector = ({ selectedUnit, onUnitClick }: UnitSelectorProps) => {
                 <span
                     key={unit}
                     className={`product__units-item ${selectedUnit === unit ? 'product__units-item--active' : ''}`}
-                    onClick={() => onUnitClick(unit as 'UK' | 'US' | 'EU' | 'Foot Length (cm)')}
+                    onClick={() => onUnitClick(unit as Unit)}
                 >
                     {unit}
                 </span>

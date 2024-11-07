@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { ImageThumbnailsProps } from "@/types/gallery";
+import { ImageThumbnailsProps, Thumbnail } from "@/types/gallery";
 
 const ImageThumbnails = ({ thumbnails, onThumbnailClick }: ImageThumbnailsProps) => {
     const [activeThumbnail, setActiveThumbnail] = useState<string | null>(null);
 
-    const handleThumbnailClick = (thumbnail: { src: string; alt: string }) => {
+    const handleThumbnailClick = (thumbnail: Thumbnail) => {
         setActiveThumbnail(thumbnail.src);
         onThumbnailClick(thumbnail);
     };

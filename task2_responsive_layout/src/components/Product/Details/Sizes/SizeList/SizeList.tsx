@@ -1,9 +1,5 @@
-type SizeListProps = {
-    availableSizes: string[];
-    unavailableSizes: string[];
-    onSizeClick: (size: string) => void;
-    selectedSize: string;
-};
+import { SizeListProps } from "@/types/product.ts";
+
 
 const SizeList = ({ availableSizes, unavailableSizes, onSizeClick, selectedSize }: SizeListProps) => {
     return (

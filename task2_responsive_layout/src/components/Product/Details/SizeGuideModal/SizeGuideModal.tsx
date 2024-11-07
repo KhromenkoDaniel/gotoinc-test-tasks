@@ -1,10 +1,7 @@
 import measureFeetImg from "@/assets/measure-ur-feet.svg";
 import cross from "@/assets/icons/cross.svg";
 
-type SizeGuideModalProps = {
-    isOpen: boolean;
-    closeModal: () => void;
-};
+import { SizeGuideModalProps } from "@/types/modal.ts";
 
 const SizeGuideModal = ({ isOpen, closeModal }: SizeGuideModalProps) => {
     if (!isOpen) return null;

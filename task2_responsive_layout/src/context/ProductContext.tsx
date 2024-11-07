@@ -1,12 +1,10 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState } from 'react';
+
 import { productsData } from '@/constants/products';
-import { Product, ProductContextType } from "@/types/product.ts";
+
+import { Product, ProductContextType, ProductProviderProps } from "@/types/product.ts";
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
-
-type ProductProviderProps = {
-  children: ReactNode;
-};
 
 export const ProductProvider = ({ children }: ProductProviderProps) => {
   const [products] = useState<Product[]>(productsData);

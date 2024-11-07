@@ -1,6 +1,8 @@
-import { useProduct } from "@/context/ProductContext";
-import Subtitle from "@/components/Subtitle";
 import { useState } from "react";
+
+import Subtitle from "@/components/Subtitle";
+
+import { useProduct } from "@/context/ProductContext";
 
 const ProductColors = () => {
     const { products, selectedProduct, selectProduct } = useProduct();

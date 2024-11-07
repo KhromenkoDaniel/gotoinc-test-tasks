@@ -21,3 +21,21 @@ export type ProductContextType = {
     selectedProduct: Product;
     selectProduct: (id: number) => void;
 };
+
+export type SizeListProps = {
+    availableSizes: string[];
+    unavailableSizes: string[];
+    onSizeClick: (size: string) => void;
+    selectedSize: string;
+};
+
+export type Unit = 'UK' | 'US' | 'EU' | 'Foot Length (cm)';
+
+export type UnitSelectorProps = {
+    selectedUnit: Unit;
+    onUnitClick: (unit: Unit) => void;
+};
+
+export type ProductProviderProps = {
+    children: React.ReactNode;
+}

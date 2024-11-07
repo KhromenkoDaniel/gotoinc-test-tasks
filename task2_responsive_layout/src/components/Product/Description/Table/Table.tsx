@@ -1,5 +1,5 @@
-
 import Row from "@/components/Product/Description/Table/Row";
+
 import { TableProps } from "@/types/table.ts";
 
 const Table = ({data}: TableProps) => (

@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
-import MainImage from "./MainImage";
+
 import ImageThumbnails from "./ImageThumbnails";
+import MainImage from "./MainImage";
+
 import { useProduct } from "@/context/ProductContext";
+
+import { Thumbnail } from "@/types/gallery.ts";
 
 const ProductGallery = () => {
     const { selectedProduct } = useProduct();
@@ -11,7 +15,7 @@ const ProductGallery = () => {
         setMainImage(selectedProduct.mainImageThumbnail);
     }, [selectedProduct]);
 
-    const handleThumbnailClick = (thumbnail: { src: string; alt: string }) => {
+    const handleThumbnailClick = (thumbnail: Thumbnail) => {
         setMainImage(thumbnail);
     };
 
