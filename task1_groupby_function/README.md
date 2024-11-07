@@ -83,7 +83,7 @@ tsc
 To run the test file and see the grouping examples:
 
 ```bash
-node groupBy.tests.js
+node groupBy.test.js
 ```
 
 ## Examples of Usage
