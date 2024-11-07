@@ -1,0 +1,12 @@
+@use 'utils/variables';
+@use 'utils/mixins';
+
+@use "layout";
+@use "components/breadcrumbs";
+@use "components/gallery";
+@use "components/details";
+@use "components/information";
+@use "components/modal";
+
+@forward 'utils/variables';
+@forward 'utils/mixins';
