@@ -1,0 +1,63 @@
+@use 'utils/mixins';
+@use "utils/variables";
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "gallery details"
+    "information information";
+  gap: 20px;
+  
+  @include mixins.respond-to(variables.$breakpoint-tablet) {
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto;
+	grid-template-areas:
+      "gallery"
+      "details"
+      "information";
+	gap: 16px;
+  }
+  
+  @include mixins.respond-to(variables.$breakpoint-mobile) {
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto;
+	grid-template-areas:
+      "gallery"
+      "details"
+      "information";
+  }
+  
+  &__gallery {
+	grid-area: gallery;
+	
+	@include mixins.respond-to(variables.$breakpoint-tablet) {
+	  margin-bottom: 16px;
+	}
+	
+	@include mixins.respond-to(variables.$breakpoint-mobile) {
+	  margin-bottom: 72px;
+	}
+  }
+  
+  &__details {
+	grid-area: details;
+	
+	@include mixins.respond-to(variables.$breakpoint-tablet) {
+	  margin-bottom: 16px;
+	}
+  }
+  
+  &__information {
+	grid-area: information;
+	
+	@include mixins.respond-to(variables.$breakpoint-tablet) {
+	  margin-top: 16px;
+	}
+	
+	@include mixins.respond-to(variables.$breakpoint-mobile) {
+	  margin-top: 12px;
+	}
+  }
+}
