@@ -206,6 +206,18 @@
 	  width: 44px;
 	  background-color: #fff;
 	}
+	&--wishlist {
+	  border: 1px solid #21262c;
+	  border-radius: 8px;
+	  padding: 8px;
+	  width: 44px;
+	  height: 44px;
+	  background-color: transparent;
+	  
+	  &:hover {
+		border: 1px solid #fff;
+	  }
+	  }
   }
   
   @include mixins.respond-to(variables.$breakpoint-mobile) {
