@@ -1,5 +1,5 @@
-@use 'utils/mixins';
-@use "utils/variables";
+@use '../utils/mixins';
+@use "../utils/variables";
 
 .breadcrumb {
   padding:0 12px 24px;
@@ -22,13 +22,13 @@
     gap: 4px;
   }
   &__slash {
-    font-family: 'Inter', sans-serif;
+    font-family: variables.$font-family;
     font-weight: 400;
     font-size: 14px;
     color: #93989c;
   }
   &__link {
-    font-family: 'Inter', sans-serif;
+    font-family: variables.$font-family;
     font-weight: 400;
     font-size: 14px;
     text-align: right;

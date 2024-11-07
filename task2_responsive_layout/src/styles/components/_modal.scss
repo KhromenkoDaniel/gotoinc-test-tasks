@@ -1,5 +1,5 @@
-@use 'utils/mixins';
-@use "utils/variables";
+@use '../utils/mixins';
+@use "../utils/variables";
 
 .size-guide {
   &__wrapper {
@@ -35,7 +35,7 @@
 	gap: 12px;
 	&-description {
 	  p,ol {
-		font-family: "Inter", sans-serif;
+		font-family: variables.$font-family;
 		font-weight: 400;
 		font-size: 14px;
 		letter-spacing: 0.02em;
@@ -60,14 +60,14 @@
 	gap: 24px;
 	
 	h2 {
-	  font-family: "Inter", sans-serif;
+	  font-family: variables.$font-family;
 	  font-weight: 700;
 	  font-size: 28px;
 	  color: #21262c;
 	}
 	
 	h3 {
-	  font-family: "Inter", sans-serif;
+	  font-family: variables.$font-family;
 	  font-weight: 700;
 	  font-size: 22px;
 	  line-height: 127%;
